@@ -1,0 +1,21 @@
+# Environment variables
+.env
+
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment folders
+venv/
+env/
+
+# System files
+.DS_Store
+
+# Jupyter checkpoints (if you use notebooks later)
+.ipynb_checkpoints/
+
+# Config files that might contain secrets
+config.py

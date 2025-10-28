@@ -30,22 +30,23 @@ It connects to public databases (like **NCBI**) to retrieve and display genes as
 ```bash
 git clone https://github.com/yourusername/heartomics.git
 cd heartomics
-
+```
 ### 2 Create a Virtual Environment (OPTIONAL: For MAC Users)
 ```bash
 python3 -m venv venv
 source venv/bin/activate     # Mac/Linux
 venv\Scripts\activate        # Windows
-
+```
 ### 3 Install Dependencies
 ```bash
 pip install -r requirements.txt
-
+```
 ### 4 Create a .env File
 ```bash
 NCBI_EMAIL=your_email@example.com
 NCBI_API_KEY=your_optional_api_key
-
+```
 ### 5 Run the Flask App
 ```bash
 python3 app.py
+```

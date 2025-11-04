@@ -1,18 +1,27 @@
 # Heartomics
-*A bioinformatics web app for exploring genomic data related to heart disease.*
+*A bioinformatics web app for exploring cardiovascular-genomics data from multiple databases.*
 
 ---
 
 ## Overview
-**Heartomics** is a Flask-based bioinformatics project that analyzes the **genomic properties of heart disease**.  
-It connects to public databases (like **NCBI**) to retrieve and display genes associated with cardiovascular disease, helping visualize genetic patterns and hereditary factors.
+**Heartomics** is a Flask-based bioinformatics tool that retrieves and displays heart-disease–related genetic information from **three public biological databases**:
+
+- **NCBI Gene (Entrez)** – heart-related genes
+- **ClinGen** – curated gene-disease associations
+- **Reactome** – cardiovascular pathways
+
+Users can select a database via tabs/buttons, view results in a clean table, and explore a **comparison view** to see overlap across sources.
 
 ---
 
 ## Features
-- Fetches heart-disease–related gene data from **NCBI** using Biopython  
-- Displays results in a clean, searchable web table  
-
+- Pulls heart-disease–associated genetic data from:
+  - **NCBI Gene (via Biopython)**
+  - **ClinGen API**
+  - **Reactome Pathway API**
+- Separate views/tabs for each data source
+- Combined comparison view
+- Searchable, structured tables
 ---
 
 ## Tech Stack

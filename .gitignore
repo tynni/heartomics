@@ -9,7 +9,6 @@ __pycache__/
 
 # Virtual environment folders
 venv/
-env/
 
 # System files
 .DS_Store

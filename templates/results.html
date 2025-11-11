@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>{{ source }} results for "{{ query }}"</h2>
+
+  {% if rows|length == 0 %}
+    <div class="alert alert-info">No results found.</div>
+  {% else %}
+    <div class="table-responsive">
+      <table class="table table-sm table-striped">
+        <thead>
+          <tr>
+            {% for key in rows[0].keys() %}
+              <th>{{ key }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in rows %}
+            <tr>
+              {% for v in r.values() %}
+                <td>{{ v }}</td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% endif %}
+
+  <a class="btn btn-secondary mt-3" href="{{ url_for('index') }}">Back</a>
+
+{% endblock %}

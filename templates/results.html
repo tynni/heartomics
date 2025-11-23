@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>{{ source|capitalize }} results for "{{ query }}"</h2>
+
+  {% if rows|length == 0 %}
+    <div class="alert alert-info">No results found.</div>
+  {% else %}
+    <div class="table-responsive">
+      <table class="table table-sm table-striped">
+        <thead>
+          <tr>
+            {% for key in rows[0].keys() %}
+              {% if key == 'ucsc_url' %}
+                <th>UCSC</th>
+              {% else %}
+                <th>{{ key }}</th>
+              {% endif %}
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in rows %}
+            <tr>
+              {% for k, v in r.items() %}
+                {% if k == 'ucsc_url' %}
+                  <td>
+                    {% if v %}
+                      <a href="{{ v }}" target="_blank" rel="noopener">UCSC</a>
+                    {% else %}
+                      -
+                    {% endif %}
+                  </td>
+                {% else %}
+                  <td>{{ v }}</td>
+                {% endif %}
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% endif %}
+
+  <a class="btn btn-secondary mt-3" href="{{ url_for('index') }}">Back</a>
+{% endblock %}

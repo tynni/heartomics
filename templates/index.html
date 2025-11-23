@@ -1,40 +1,47 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="row">
-        <div class="col-md-8">
-            <h1>Welcome to Heartomics</h1>
-            <p class="lead">Explore heart-related genes and pathways from multiple public databases.</p>
-        </div>
-        <div class="col-md-4">
-            <form method="get" action="{{ url_for('search') }}">
-                <div class="input-group">
-                    <input name="q" class="form-control" placeholder="Search term (e.g. cardiomyopathy, heart)" value="heart">
-                    <input type="hidden" name="source" id="source-input" value="ncbi">
-                    <button class="btn btn-primary" type="submit">Search</button>
-                </div>
-                <div class="mt-2 btn-group" role="group" aria-label="sources">
-                    <input type="radio" class="btn-check" name="source_radio" id="src-ncbi" autocomplete="off" checked>
-                    <label class="btn btn-outline-primary" for="src-ncbi" onclick="document.getElementById('source-input').value='ncbi'">NCBI</label>
-
-                    <input type="radio" class="btn-check" name="source_radio" id="src-clingen" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="src-clingen" onclick="document.getElementById('source-input').value='clingen'">ClinGen</label>
-
-                    <input type="radio" class="btn-check" name="source_radio" id="src-reactome" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="src-reactome" onclick="document.getElementById('source-input').value='reactome'">Reactome</label>
-
-                    <input type="radio" class="btn-check" name="source_radio" id="src-compare" autocomplete="off">
-                    <label class="btn btn-outline-secondary" for="src-compare" onclick="document.getElementById('source-input').value='compare'">Compare</label>
-                </div>
-            </form>
-        </div>
+<div class="row">
+    <div class="col-md-8">
+        <h1>Welcome to Heartomics</h1>
+        <p class="lead">Explore heart-related genes from multiple public databases.</p>
     </div>
 
-    <hr />
+    <div class="col-md-4">
+        <form method="get" action="{{ url_for('search') }}">
+            <div class="input-group">
+                <input name="q" class="form-control"
+                       placeholder="Search term (e.g. cardiomyopathy, heart)"
+                       value="heart">
+                <input type="hidden" name="source" id="source-input" value="ncbi">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
 
-    <section>
-        <h2>About</h2>
-        <p>This lightweight demo pulls data from NCBI Gene, ClinGen, and Reactome and shows a simple comparison view.</p>
-    </section>
+            <div class="mt-2 btn-group" role="group">
+                <input type="radio" class="btn-check" name="source_radio" id="src-ncbi" checked>
+                <label class="btn btn-outline-primary" for="src-ncbi"
+                       onclick="document.getElementById('source-input').value='ncbi'">NCBI</label>
 
+                <input type="radio" class="btn-check" name="source_radio" id="src-mygene">
+                <label class="btn btn-outline-primary" for="src-mygene"
+                       onclick="document.getElementById('source-input').value='mygene'">MyGene</label>
+
+                <input type="radio" class="btn-check" name="source_radio" id="src-compare">
+                <label class="btn btn-outline-secondary" for="src-compare"
+                       onclick="document.getElementById('source-input').value='compare'">Compare</label>
+            </div>
+        </form>
+    </div>
+</div>
+
+<hr />
+
+<section>
+            <h2>About</h2>
+            <p>
+            This demo pulls gene data from two sources: <strong>NCBI Gene</strong> and <strong>MyGene.info</strong>.
+            Use the search box above to explore heart biology across these databases and compare results.
+            An example would be searching for "hypertrophic cardiomyopathy"
+        </p>
+</section>
 {% endblock %}

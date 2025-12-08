@@ -83,16 +83,3 @@ Then open your browser at `http://127.0.0.1:5000/`.
 	- `UCSC` — link to the UCSC Genome Browser search for the symbol (hg38)
 
 If no exact symbol overlap is found, the app shows an informational message and the results table will be empty.
-
-## Links provided in results
-
-- Each row in the results table includes a `UCSC` link (when a symbol is available) that opens the UCSC Genome Browser (assembly hg38) centered on the gene symbol. Use this to inspect genomic context and available tracks.
-
-## Quick diagnostic
-
-There is a small diagnostic helper `test_ncbi.py` that can be used to check Entrez configuration and simple queries:
-
-```bash
-source venv/bin/activate
-python test_ncbi.py
-```
